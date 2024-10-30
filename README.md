@@ -1,6 +1,6 @@
 # Computational Finance collection
+focus on application of different computation methods on various financial topics
 
-focus on application of different calculation methods on various financial topics
 # calculation methods includes 
 fourier transformation, AI(DL,ML,RL) techniques, statistical, linear algebra, optimization algo, stochastic simulation,
 # financial topics includes 
