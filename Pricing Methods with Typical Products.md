@@ -18,8 +18,8 @@ Compact practitioner mapping between numerical method families and the types of 
 ## Quick Selection Rule
 
 - European only → **Closed-form**
-- Early exercise or barriers (low dimension) → **PDE/FDM**
-- Path-dependent or high dimension → **Monte Carlo**
+- Early exercise or barriers (low dimension, at most 2D) → **PDE/FDM(CPU)**
+- Path-dependent or high dimension → **Monte Carlo(GPU, HPC)**
 - Many strikes / calibration → **FFT**
 
 ---
