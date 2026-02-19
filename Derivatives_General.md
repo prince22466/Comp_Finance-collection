@@ -12,9 +12,9 @@
 
 | Asset class | Vanilla (default market model) | Vol quote convention (market standard) | Models for exotics (common) |
 |---|---|---|---|
-| Equity | Black–Scholes (lognormal diffusion, RN measure; calibrated to implied vol surface) | Lognormal implied vol surface **σ(K, T)**, parameterized by **strike** or **log-moneyness** *log(K/F)*; skew/smile; **delta-space quoting** common in OTC | **Local Vol (Dupire)**; **Heston** (stoch vol); **SLV** (local–stoch vol hybrid) |
-| FX | **Garman–Kohlhagen** (BS with domestic & foreign discounting) | Quoted via **ATM vol**, **25Δ Risk Reversal (RR)**, **25Δ Butterfly (BF)**; delta conventions: **spot delta / forward delta / premium-adjusted delta**; typically **lognormal (Black) vol** | **SABR**; **Local Vol**; **Stochastic vol** (e.g., Heston) |
-| Rates | Vanilla quoting: **Black-76** for caps/floors; swaptions in **Black (lognormal)** or **Bachelier (normal)** (esp. low/negative rates) | **Black implied vol** or **Normal (Bachelier) vol** on an **expiry × tenor** grid (not delta-based) | **LMM (Libor Market Model)**; **Hull–White** (short-rate); **SABR** for smile interpolation; multi-factor short-rate models |
-| Credit | CDS pricing via **reduced-form (hazard rate / intensity)**; bootstrapped from CDS spreads | CDS options often quoted as **Black implied vol on CDS spread** on an **expiry × tenor** grid; typically not delta-based | **Stochastic intensity** models; **copula** models for tranche products; **base correlation** framework (CDO tranches) |
+| Equity | Black–Scholes (lognormal diffusion, RN measure; calibrated to implied vol surface) | Lognormal implied vol surface **σ(K, T)** | **Local Vol (Dupire)**; **Heston** (stoch vol); **SLV** (local–stoch vol hybrid) |
+| FX | **Garman–Kohlhagen** (BS with domestic & foreign discounting) | Expiry × (ATM, RR, BF), where ATM-> **ATM vol**, RR->**25Δ Risk Reversal (RR)**, BF->**25Δ Butterfly (BF)**; typically **lognormal (Black) vol** | **SABR**; **Local Vol**; **Stochastic vol** (e.g., Heston) |
+| Rates | Vanilla quoting: **Black-76** for caps/floors; swaptions in **Black (lognormal)** or **Bachelier (normal)** (esp. low/negative rates) | **Black implied vol** or **Normal (Bachelier) vol** on an **Expiry × tenor** grid (not delta-based) | **LMM (Libor Market Model)**; **Hull–White** (short-rate); **SABR** for smile interpolation; multi-factor short-rate models |
+| Credit | CDS pricing via **reduced-form (hazard rate / intensity)**; bootstrapped from CDS spreads | CDS options often quoted as **Black implied vol on CDS spread** on an **Expiry × tenor** grid; typically not delta-based | **Stochastic intensity** models; **copula** models for tranche products; **base correlation** framework (CDO tranches) |
 
 
