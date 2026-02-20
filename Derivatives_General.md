@@ -8,7 +8,7 @@
 | Barrier knock-out | Yes (barrier hit event) | No (standard barriers European) | No (discontinuous around barrier / event, same logic as Digital around strike) | PDE-FDM; MC with Brownian bridge (bias correction); FFT in some models |
 | Bermudan swaption | Payoff not path dependent; valuation depends on optimal stopping across dates | Yes (discrete dates) | Yes (continuous, kink at exercise boundary) | Tree; Least Squares MC; PDE (low dimension) |
 | Cliquet | Yes (sequence of returns with caps/floors) | No (standard versions) | Generally continuous but piecewise / non-smooth | Monte Carlo; PDE (low dimension); convolution methods in some models |
-| Asian | Yes (sequence of returns taken as average in payoff function) | No (standard versions) | yes | Monte Carlo(no closed form for Asian); |
+| Asian | Yes (sequence of returns taken as average in payoff function) | No (standard versions) | yes | Monte Carlo(no closed form for Asian, u know why?); |
 
 
 | Asset class | Vanilla (default market model) | Vol quote convention (market standard) | Models for exotics (common) |
