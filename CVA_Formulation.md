@@ -1,28 +1,28 @@
 **CVA, general formula and conputation
 
 
-**general formula
+**general formula(discrete form)
 
-## Wrong-Way Risk when CDS Portfolio References the Counterparty
-
-### Core CVA formula (discrete form)
-
-\[
-\text{CVA} \approx \text{LGD}\sum_i DF(t_i)\;EPE(t_i)\;\Delta PD_i
-\]
-
-where:
+CVA ≈ LGD ∑ᵢ DF(tᵢ) · E[E(tᵢ) · ΔPDᵢ]
 
 - **LGD** = Loss Given Default = \(1-R\)  
-- \(DF(t_i)\) = discount factor  
-- \(EPE(t_i)\) = expected positive exposure at time \(t_i\)  
-- \(\Delta PD_i = PD(t_i) - PD(t_{i-1}) = S(t_{i-1}) - S(t_i)\)
+-  DF(tᵢ) = discount factor  
+-  E(tᵢ) = positive exposure at time \(t_i\)  
+-  ΔPDᵢ= PD(t_i) - PD(t_{i-1}) = S(t_{i-1}) - S(t_i)\), the prob of default between t_i and t_(i-1)
+-  E[....], meaans expection
 
----
+if E(tᵢ) and ΔPDᵢ are independent(aka, no wrong-way risk),
+thus, 
+CVA ≈ LGD ∑ᵢ DF(tᵢ) · EE(tᵢ) · ΔPDᵢ
+-  EE(tᵢ) = expected positive exposure at time \(t_i\)
 
-## Why Wrong-Way Risk is Large for CDS on the Counterparty
 
-If the portfolio consists mainly of CDS whose **reference entity = counterparty**, then:
+
+
+
+## when does the portfolio have have wrong-way risk exposure?Why Wrong-Way Risk is Large for CDS on the Counterparty
+
+If the portfolio consists heavily of CDSs which referencing to counterparties, then:
 
 - CDS spread drives **default probability**
 - The same CDS spread drives **portfolio MtM → exposure**
@@ -36,84 +36,9 @@ Credit deterioration simultaneously:
 
 This creates strong **positive dependence** → Wrong-Way Risk (WWR).
 
----
-
-## Mathematical view (joint expectation)
-
-True CVA term:
-
-\[
-\mathbb{E}\!\left[E^+(t_i)\,\mathbf{1}_{\{\tau \in (t_{i-1},t_i]\}}\right]
-\]
-
-Independence assumption (often used):
-
-\[
-\mathbb{E}[E^+(t_i)] \cdot \mathbb{Q}(\tau \in (t_{i-1},t_i])
-\]
-
-For CDS on the counterparty, this separation is invalid because both terms depend on the same credit factor.
-
----
-
-## Sensitivity decomposition (shows WWR explicitly)
-
-If spread \(s\) drives both exposure and PD:
-
-\[
-\frac{\partial \text{CVA}}{\partial s}
-\approx
-\text{LGD}\sum_i DF(t_i)
-\left[
-\frac{\partial EPE(t_i)}{\partial s}\,\Delta PD_i
-+
-EPE(t_i)\,\frac{\partial (\Delta PD_i)}{\partial s}
-\right]
-\]
-
-Two components:
-
-- **Exposure / WWR term**
-  \[
-  \frac{\partial EPE}{\partial s}\,\Delta PD
-  \]
-
-- **Pure PD term**
-  \[
-  EPE\,\frac{\partial \Delta PD}{\partial s}
-  \]
-
-In standard portfolios the first term is often small.  
-For CDS on the counterparty it can be **large or dominant**.
-
----
-
-## Intuition
-
-For a bought-protection CDS on the counterparty:
-
-- Spread widens → CDS MtM increases → exposure rises  
-- Spread widens → default probability rises  
-
-Worst credit states produce **larger exposure AND higher default probability**.
-
-That is the definition of Wrong-Way Risk.
-
----
-
-## Practical implications
-
-- Independence-based CVA underestimates risk  
-- CS01 of CVA contains a large exposure-driven component  
-- Hedging CVA becomes self-referential  
-- Coupled simulation (joint credit + exposure) is required
-
-Typical desk approaches:
-
-- Joint spread / exposure simulation  
-- Stress WWR scenarios  
-- WWR add-ons or multipliers
-
 
 
 **general conputation
+includes:
+1. compute positive exposure of the portfolio at each time points by simulation.
+2. 
