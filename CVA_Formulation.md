@@ -17,7 +17,7 @@ CVA ≈ LGD ∑ᵢ DF(tᵢ) · EE(tᵢ) · ΔPDᵢ
 -  EE(tᵢ) = expected positive exposure at time \(t_i\)
 
 
-## when does the portfolio have have wrong-way risk exposure?
+## when does the portfolio have wrong-way risk exposure?
 
 If the portfolio consists heavily of CDSs which referencing to counterparties, then:
 
@@ -28,8 +28,8 @@ Therefore exposure and default are **not independent**.
 
 Credit deterioration simultaneously:
 
-1. Increases \(\Delta PD_i\)  
-2. Changes \(EPE(t_i)\) (often increases if long protection)
+1. Increases prob of default 
+2. Changes exposure (often increases if long protection)
 
 This creates strong **positive dependence** → Wrong-Way Risk (WWR).
 
@@ -39,5 +39,7 @@ This creates strong **positive dependence** → Wrong-Way Risk (WWR).
 if consider wrong-way risk, it includes:
 1. simulate spread(CDS) and exposures together(aka, given one spread scenario, derive prob default and simulate exposure). 
 2. then take the average of product of expousre and prob default, then sum over each time point.
+
 if no wrong-way risk, then
+
 simulate spread(CDS) and exposures independently. 
