@@ -35,7 +35,7 @@ This creates strong **positive dependence** → Wrong-Way Risk (WWR).
 
 
 
-## general conputation
+## general computation
 if consider wrong-way risk, it includes:
 1. simulate spread(CDS) and exposures together(aka, given one spread scenario, derive prob default and simulate exposure). 
 2. then take the average of product of expousre and prob default, then sum over each time point.
