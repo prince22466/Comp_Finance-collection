@@ -1,4 +1,7 @@
 ## Modelling_general
+
+list of questions for general conception understanding of probability thoeries, assumptions, constraints when modelling.
+
 ## some FAQ
 1. why self-financing assumption is important, what if remove this assumption?
 
