@@ -2,4 +2,4 @@
 ## some FAQ
 1. why self-financing assumption is important, what if remove this assumption?
 
-2. 
+2. what does change of measure really mean and do? for example forward QT mesure?
