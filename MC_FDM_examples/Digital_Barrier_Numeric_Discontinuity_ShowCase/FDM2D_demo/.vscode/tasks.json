@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build FDM2D_demo",
+            "command": "D:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++20",
+                "${workspaceFolder}\\FDM2D.cpp",
+                "${workspaceFolder}\\conditions.cpp",
+                "-o",
+                "${workspaceFolder}\\FDM2D_demo.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds the 2D FDM demo with C++20."
+        },
+        {
+            "label": "C/C++: run FDM2D_demo",
+            "type": "shell",
+            "command": "${workspaceFolder}\\FDM2D_demo.exe",
+            "dependsOn": "C/C++: g++.exe build FDM2D_demo",
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": false
+            }
+        }
+    ]
+}
