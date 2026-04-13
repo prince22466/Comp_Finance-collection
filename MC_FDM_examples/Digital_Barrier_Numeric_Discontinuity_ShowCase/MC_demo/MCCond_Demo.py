@@ -9,6 +9,8 @@
 
 
 
+# to update
+
 import numpy as np
 
 num_steps = 100
@@ -18,12 +20,14 @@ X0 = 3.0
 # simulate X and e
 rng = np.random.default_rng(seed=42)
 Xs = rng.normal(loc=0.0, scale=2.0, size=(num_paths, num_steps))
-es = rng.normal(loc=0.0, scale=5.0, size=(num_paths, num_steps))
+es = rng.normal(loc=0.0, scale=1.0, size=(num_paths, num_steps))
+#es = rng.normal(loc=0.0, scale=5.0, size=(num_paths, num_steps)) # a louder noise(larger variance)
 
 # cumulative sum to make X a random walk, starting from X0, same for Y 
-Xs = np.cumsum(Xs, axis=1) + X0 
-Ys = Xs + es
 
+Ys = Xs + es
+Xs = np.cumsum(Xs, axis=1) + X0 
+Ys = np.cumsum(Ys, axis=1) + X0
 
 # final 
 final_Xs = Xs[:, -1]
@@ -31,5 +35,5 @@ final_Ys = Ys[:, -1]
 
 
 #compare
-print("mean check Naiive MC vs MC with condtioning: ", final_Ys.mean(), " vs ", final_Xs.mean())
-print("variance check Naiive MC vs MC with condtioning: ", final_Ys.var(), " vs ", final_Xs.var())
+print("mean check Naiive MC vs MC with condtioning: ", final_Xs.mean(), " vs ", final_Ys.mean())
+print("variance check Naiive MC vs MC with condtioning: ", final_Xs.var(), " vs ", final_Ys.var())
