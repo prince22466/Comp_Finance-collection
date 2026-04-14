@@ -9,7 +9,7 @@ The notebook has two parts:
 1. Constant market rate scenario  
    - Uses a fixed market rate (`r_market = 5.4%`)
    - Simulates monthly cashflows for a pool of 10 fixed-rate mortgages
-   - Uses a simple loan-level logistic prepayment rule
+   - Uses a simple loan-level logistic prepayment model(a demo model, which in practice should be calibrated using read data)
 
 2. Dynamic market rate scenario  
    - Simulates short-rate paths with a 1-factor Hull-White model (Monte Carlo)
