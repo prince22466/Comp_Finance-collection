@@ -18,7 +18,7 @@ for example, A={T>5}, B={T>3}, A ∩ B ={T>5}, then P(T>5) = P(T>5 / T>3) * P(T>
 
 
 ### hazard funtion, and hazard rate
-h(t) = P(t < T < t+Δt / T>t) /Δt , is the hazard function, which calculates the chance of event occurance per Δt,  given survival time greater than t, aka,  intensity.
+h(t) = P(t < T < t+Δt / T>t) /Δt , is the hazard function, which calculates the likelihood(not chance, because it can be larger than 1) of event occurance per Δt,  given survival time greater than t, aka,  intensity.
 
 hazard rate λ, is the h(t) when Δt->0. λ is mainly used in continous hazard model(such as exponential model), and hazard rate has its own unit time according to the case of usage. 
 
