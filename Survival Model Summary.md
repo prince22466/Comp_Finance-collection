@@ -31,6 +31,6 @@ prob of event occurance during period of time ≈  harzard rate * time interval
 ### Primary Models
 | Model | Discrete/Continous | Assumptions | Building Prcess | Advantage | Weakness | Improvement |
 |---|---|---|---|---|---|---|
-| Kaplan-Meier | discrete | No assumption, purely data explorative model | rank the tabelu data by time of event, then calculate thing like P(T>5) = P(T>5 / T>3) * P(T>3), then do this for each time point t, then get a table of P(T>t_i) | Closed-form (Black–Scholes) |
+| Kaplan-Meier | discrete | No assumption, purely data explorative model | rank the tabelu data by time of event, then calculate things like P(T>5) = P(T>5 / T>3) * P(T>3), then do this for each time point t, then get a table of P(T>t_i) | simple process, conditional prob calculation avoid data censorship problem |
 | Exponential model | continuous | constant hazard rate, which means hazard rate is inherent property of an object, and it has nothing to do with time and other factors | Yes (continuous, kink at strike) | Tree / PDE-FDM; Least Squares MC |
 | Cox Proportional Hazard model | continous | constant baseline hazard | No (discontinuous at strike, around strike a small change of price can lead to payoff jumps from 0 → 1 and vice versa, therefore Δpayoff / Δprice is infinite.) | Closed form (BS); replication via vanillas |
