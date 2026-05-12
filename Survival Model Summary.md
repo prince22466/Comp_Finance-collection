@@ -4,15 +4,23 @@
 ------
 
 ## Survival Model Prob Foundation
+
+### survival prob
 T, the arrival time of event
 
-s(t) = P(T>t), s(t) the chance of an object surviving longer than time t(or no event from 0 to t)
+s(t) = P(T>t), s(t) the chance of an object surviving longer than time t(or no event from 0 to t).
+
+s(0) = 1(definitely survial at time 0), s(+∞) = 0(definitely event arrive when time goes infinite) 
 
 from conditional prob formula, P(A ∩ B)= P(A ∣ B) * P(B), thus s(t) can also be expressed in such manner.
 
-for example, A={T>5}, B={T>3}, A ∩ B ={T>5}, then P(T>5) = P(T>5, T>3) * P(T>3). such calculation is used in **Kaplan-Meier** model
+for example, A={T>5}, B={T>3}, A ∩ B ={T>5}, then P(T>5) = P(T>5 / T>3) * P(T>3). such calculation is used in **Kaplan-Meier** model
 
-h(t) = 1 - s(t), the chance of an object surviving shorter than time t(or an event from 0 to t)
+
+### hazard funtion, and hazard rate
+h(t) = P(t < T < t+Δt / T>t), the chance for event during time t and t+Δt, given survival time greater than t.
+
+hazard rate λ, is the h(t) when Δt->0, aka, instantenous rate of event occurance. λ is mainly used in continous hazard model(such as exponential model), and hazard rate has its own unit time according to the case of usage. for example, λ could be monthly chance of prepayment or credit default, chance of machine failure in each minute, etc  
 
 
 
