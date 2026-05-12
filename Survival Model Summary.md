@@ -31,6 +31,6 @@ prob of event occurance during period of time ≈  harzard rate * time interval
 ### Common Models
 | Model | Discrete/Continous | Assumptions | Building Prcess | Advange | Weakness |
 |---|---|---|---|---|---|
-| Kaplan-Meier | discrete | No | Yes (continuous, kink at strike) | Closed-form (Black–Scholes) |
-| Exponential model | continuous | Yes | Yes (continuous, kink at strike) | Tree / PDE-FDM; Least Squares MC |
+| Kaplan-Meier | discrete | No assumption | Yes (continuous, kink at strike) | Closed-form (Black–Scholes) |
+| Exponential model | continuous | constant hazard rate | Yes (continuous, kink at strike) | Tree / PDE-FDM; Least Squares MC |
 | Cox Proportional Hazard model | continous | No (typically European) | No (discontinuous at strike, around strike a small change of price can lead to payoff jumps from 0 → 1 and vice versa, therefore Δpayoff / Δprice is infinite.) | Closed form (BS); replication via vanillas |
