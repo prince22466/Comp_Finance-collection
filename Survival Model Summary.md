@@ -6,9 +6,12 @@
 ## Survival Model Prob Foundation
 T, the arrival time of event
 
-s(t) = P(T>t), s(t) the chance of an object surviving longer than time t(or no event from 0 to T)
+s(t) = P(T>t), s(t) the chance of an object surviving longer than time t(or no event from 0 to t)
 
-h(t) = 1 - s(t), the chance of an object surviving shorter than time t(or an event from 0 to T)
+from conditional prob formula, $$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
+
+
+h(t) = 1 - s(t), the chance of an object surviving shorter than time t(or an event from 0 to t)
 
 
 
