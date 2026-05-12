@@ -18,9 +18,9 @@ for example, A={T>5}, B={T>3}, A ∩ B ={T>5}, then P(T>5) = P(T>5 / T>3) * P(T>
 
 
 ### hazard funtion, and hazard rate
-h(t) = P(t < T < t+Δt / T>t), the chance for event during time t and t+Δt, given survival time greater than t.
+h(t) = P(t < T < t+Δt / T>t) /Δt , the chance for event during time t and t+Δt, given survival time greater than t.
 
-hazard rate λ, is the h(t) when Δt->0, aka, instantenous rate of event occurance. λ is mainly used in continous hazard model(such as exponential model), and hazard rate has its own unit time according to the case of usage. for example, λ could be monthly chance of prepayment or credit default, chance of machine failure in each minute, etc  
+hazard rate λ, is the h(t) when Δt->0, aka, an input to calcualte the prob of event occurance during a period of time. λ is mainly used in continous hazard model(such as exponential model), and hazard rate has its own unit time according to the case of usage. 
 
-
+for example, λ could be monthly rate being used to caluclate monthly chance of prepayment or credit default as 1 - exp(-λ), rate of each minute for prob of machine failure in each minute, etc  
 
