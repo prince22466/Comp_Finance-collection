@@ -24,3 +24,8 @@ hazard rate λ, is the h(t) when Δt->0. λ is mainly used in continous hazard m
 
 for example, λ could be monthly rate being used to caluclate monthly chance of prepayment or credit default as 1 - exp(-λ), rate of each minute for prob of machine failure in each minute, etc  
 
+
+prob of event occurance during period of time ≈  harzard rate * time interval
+
+
+### Common models
