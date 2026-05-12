@@ -28,4 +28,10 @@ for example, λ could be monthly rate being used to caluclate monthly chance of 
 prob of event occurance during period of time ≈  harzard rate * time interval
 
 
-### Common models
+### Common Models
+| Model | Discrete/Continous | Assumptions | Building Prcess | Weakness |
+|---|---|---|---|---|
+| European call | No (terminal only) | No | Yes (continuous, kink at strike) | Closed-form (Black–Scholes) |
+| American put | Not path dependent in payoff; valuation depends on early-exercise decision | Yes | Yes (continuous, kink at strike) | Tree / PDE-FDM; Least Squares MC |
+| Digital (cash-or-nothing) | No (terminal only) | No (typically European) | No (discontinuous at strike, around strike a small change of price can lead to payoff jumps from 0 → 1 and vice versa, therefore Δpayoff / Δprice is infinite.) | Closed form (BS); replication via vanillas |
+| Barrier knock-out | Yes (barrier hit event) | No (standard barriers European) | No (discontinuous around barrier / event, same logic as Digital around strike) | PDE-FDM; MC with Brownian bridge (bias correction); why these 2 methods?|
