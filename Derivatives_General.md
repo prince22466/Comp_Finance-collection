@@ -1,4 +1,4 @@
-**Option(Vanilla and some Exotics)
+## by Option types(Vanilla and some Exotics)
 
 | Product | Path dependent | Early exercise | Continuous payoff function | Typical pricing method |
 |---|---|---|---|---|
@@ -11,6 +11,7 @@
 | Asian(arithmetic) | Yes (sequence of returns taken as average in payoff function) | No (standard versions) | yes | Monte Carlo(no closed form for arithmetic Asian, but close form for geometric Asian, u know why?); |
 
 
+## by Asset Class
 | Asset class | Vanilla (default market model) | Vol quote convention (market standard) | Models for exotics (common) |
 |---|---|---|---|
 | Equity | Black–Scholes (lognormal diffusion, RN measure; calibrated to implied vol surface) | Lognormal implied vol surface **σ(K, T)** | **Local Vol (Dupire)**; **Heston** (stoch vol); **SLV** (local–stoch vol hybrid) |
